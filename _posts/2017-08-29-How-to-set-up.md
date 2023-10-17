@@ -14,7 +14,9 @@ Note, for versions prior to 1.13.0 only, you also need to download the old inter
 
 IgBlast allows you to search any germline databases of your choice (using -germline_db_V, -germline_db_J and -germline_db_D options).
 
-The NCBI mouse germline gene databases (i.e., mouse_gl_V, etc.) are supplied on our ftp site ([https://ftp.ncbi.nih.gov/blast/executables/igblast/release/database/](https://ftp.ncbi.nih.gov/blast/executables/igblast/release/database/).  Also see [https://www.ncbi.nlm.nih.gov/igblast/](https://www.ncbi.nlm.nih.gov/igblast/) about database details).
+The NCBI mouse germline gene databases (i.e., mouse_gl_V, etc.) are supplied on our FTP site ([https://ftp.ncbi.nih.gov/blast/executables/igblast/release/database/](https://ftp.ncbi.nih.gov/blast/executables/igblast/release/database/).  Also see [https://www.ncbi.nlm.nih.gov/igblast/](https://www.ncbi.nlm.nih.gov/igblast/) about database details).
+
+The germline gene databases from AIRR community (also known as Open Germline Receptor Database, OGRDB (https://ogrdb.airr-community.org/)) are also available on our FTP site (https://ftp.ncbi.nih.gov/blast/executables/igblast/release/database/airr/).
   
 To search IMGT germline sequences, you need to download them from IMGT web site 
 ([http://www.imgt.org/vquest/refseqh.html#VQUEST](http://www.imgt.org/vquest/refseqh.html#VQUEST) ).  You need to download all V, D and J sequences for whatever organisms you are interested in.  Combine all V, all D and all J sequences, respectively, into separate files (i.e., one file for all V sequences, one for all D sequences and one file all for J sequences).  After you have downloaded the sequences, invoke our utility tool edit_imgt_file.pl (in the bin directory in the IgBlast release package) to process these sequences (i.e., to change the long IMGT definition lines to germline gene names only).  For example:
