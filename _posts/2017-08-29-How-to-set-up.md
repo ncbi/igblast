@@ -6,7 +6,9 @@ order: 0
 ---
 #### 1. Download IgBlast program
 
-IgBlast program can be downloaded from ([https://ftp.ncbi.nih.gov/blast/executables/igblast/release/LATEST](https://ftp.ncbi.nih.gov/blast/executables/igblast/release/LATEST) ).  We provide pre-compiled programs for Linux, Windows, MacOs as well as source code for you to build on your own platform. 
+IgBlast program can be downloaded from [https://ftp.ncbi.nih.gov/blast/executables/igblast/release](https://ftp.ncbi.nih.gov/blast/executables/igblast/release).  We provide pre-compiled programs for Linux, Windows, MacOs as well as source code for you to build on your own platform. 
+
+Occasionally some annotation files under internal_data and optional_file folders are updated between IgBLAST releases and it is recommended to use the new annotation files under [https://ftp.ncbi.nih.gov/blast/executables/igblast/release/patch/](https://ftp.ncbi.nih.gov/blast/executables/igblast/release/patch/).
 
 Note, for versions prior to 1.13.0 only, you also need to download the old internal_data and optional_file folders from [https://ftp.ncbi.nih.gov/blast/executables/igblast/release/](https://ftp.ncbi.nih.gov/blast/executables/igblast/release/).  We strongly encourage you to get the latest IgBlast version with built-in internal_data and optional_file.
 
