@@ -36,12 +36,9 @@ bin/makeblastdb -parse_seqids -dbtype nucl -in my_seq_file
 Now you can use my_seq_file as blast database file for IgBlast.
 
 #### Other notes on setting up IgBlast 
-The internal_data directory contains data internal to igblast program only and users should NEVER add, delete, move, copy or edit any files in this directory.  Igblastn program expects the internal_data directory under current directory (i.e., where you run igblast 
-program) or a path pointed to by IGDATA environmental variable (avoid using space in your path name for 
-Windows system). Note that this directory does NOT contain any germline gene databases you should search (see above 
-for how you can obtain a germline gene database).
+The internal_data directory contains data internal to igblast program only and users should NEVER add, delete, move, copy or edit any files in this directory (unless you intend to use custom organism or custom FWR/CDR described later).  Igblastn program expects the internal_data directory under current directory (i.e., where you run igblast program) or a path pointed to by IGDATA environmental variable (avoid using space in your path name for Windows system). 
 
-The optional_file directory contains files that indicate germline J gene coding frame start position (position is 0-based), the J gene type, and the CDR3 end position for each sequence in the germline J sequence database (Fields are tab-delimited).  The supplied annotation information is only for NCBI or IMGT  germline gene sequence database (including gene names as well as the sequences).   If you search your own database and if it contains different sequences or sequence identifiers, then you need to edit the corresponding file accordingly (Enter -1 if the frame information is unknown) or you won't get proper frame status or CDR3 information (other results will still be shown correctly).  You need to use -auxiliary_data option to specify your file. You can directly supply a path to this file or put it under a path pointed to by IGDATA environmental variable.
+The optional_file directory contains files that indicate germline J gene coding frame start position, the J gene type, and the CDR3 end position for each sequence in the germline J sequence database (see optional_file/human_gl.aux as an example).  The supplied annotation information is only for NCBI or IMGT  germline J gene sequence database (including gene names as well as the sequences).   If you search your own sequence database and if it contains different sequences or sequence identifiers, then you need to edit the corresponding file accordingly or you won't get proper frame status or CDR3 information (other results will still be shown correctly).  You need to use -auxiliary_data option to specify your file. You can directly supply a path to this file or put it under a path pointed to by IGDATA environmental variable.
 
 #### Procedure to set up IgBLAST for custom organism
 
@@ -51,7 +48,7 @@ IgBLAST internally only supports organisms including human, mouse, rat, rabbit a
 
 2. Make a blast sequence database for germline V genes that correspond to what you have annotated above. This database needs to be named my_organism_V (for example sheep_V). Make sure you use the -parse_seqids flag when using makeblastdb. The blast database files need to be put under internal_data/my_organism folder (for example internal_data/sheep). Note that this database is intended only as internal data for IgBLAST and does not need to be updated unless there is a new germline V gene (not new allele). Typically, the germline V gene database you want to search (i.e., specified by -germline_db_V parameter) is a different one (for example, the one that contains all alleles).
 
-3. If you also want CDR3/FWR4 information, you need to supply a file that has information such as CDR3 stop for germline J genes (see optional_file/human_gl.aux for an example). This file can have any name and can be put anywhere as long as you supply it to the -auxiliary_data parameter when running IgBLAST(for example -auxiliary_data my_foler/my_file).
+3. If you also want CDR3/FWR4 information, you need to supply a file that has information such as CDR3 stop for germline J genes (see optional_file/human_gl.aux for required fields and example values). This file can have any name and can be put anywhere as long as you supply it to the -auxiliary_data parameter when running IgBLAST(for example -auxiliary_data my_foler/my_file).
 
 To run IgBLAST for your organism, please make sure you specify the -organism my_organism parameter.
 
