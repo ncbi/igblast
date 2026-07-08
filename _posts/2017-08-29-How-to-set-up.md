@@ -48,7 +48,7 @@ IgBLAST internally only supports organisms including human, mouse, rat, rabbit a
 
 2. Make a blast sequence database for germline V genes that correspond to what you have annotated above. This database needs to be named my_organism_V (for example sheep_V). Make sure you use the -parse_seqids flag when using makeblastdb. The blast database files need to be put under internal_data/my_organism folder (for example internal_data/sheep). Note that this database is intended only as internal data for IgBLAST and does not need to be updated unless there is a new germline V gene (not new allele). Typically, the germline V gene database you want to search (i.e., specified by -germline_db_V parameter) is a different one (for example, the one that contains all alleles).
 
-3. If you also want CDR3/FWR4 information in IgBLAST results, you need to supply a file that has information such as CDR3 stop for germline J genes (see optional_file/human_gl.aux for required fields and example values). This file can have any name and can be put anywhere as long as you supply it to the -auxiliary_data parameter when running IgBLAST(for example -auxiliary_data my_foler/my_file).
+3. If you also want CDR3/FWR4 information in IgBLAST results, you need to supply the optional .aux file that has information such as CDR3 stop for germline J genes (see optional_file/human_gl.aux for required fields and example values). This file can have any name and can be put anywhere as long as you supply it to the -auxiliary_data parameter when running IgBLAST(for example -auxiliary_data my_foler/my_file).
 
 To run IgBLAST for your organism, please make sure you specify the -organism my_organism parameter.
 
